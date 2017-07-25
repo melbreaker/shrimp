@@ -26,7 +26,6 @@ module Shrimp
   class Phantom
     attr_accessor :source, :configuration, :outfile
     attr_reader :options, :cookies, :result, :error
-    SCRIPT_FILE = Shrimp.configuration.default_options[:script_file]
 
     # Public: Runs the phantomjs binary
     #
@@ -64,7 +63,7 @@ module Shrimp
       [
         Shrimp.configuration.phantomjs,
         command_config_file,
-        SCRIPT_FILE,
+        Shrimp.configuration.default_options[:script_file],
         @source.to_s.shellescape,
         @outfile,
         format,
