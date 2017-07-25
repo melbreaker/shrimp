@@ -26,7 +26,7 @@ module Shrimp
   class Phantom
     attr_accessor :source, :configuration, :outfile
     attr_reader :options, :cookies, :result, :error
-    SCRIPT_FILE = File.expand_path('../rasterize.js', __FILE__)
+    SCRIPT_FILE = Shrimp.configuration.default_options[:script_file]
 
     # Public: Runs the phantomjs binary
     #
